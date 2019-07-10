@@ -1,0 +1,105 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --line-on-color: red;
+  --line-off-color: #111;
+}
+
+.display-segment {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 40px;
+  height: 200px;
+  background: var(--line-off-color);
+  position: relative;
+  overflow: visible;
+}
+
+.display-segment.horizontal {
+  transform: rotate(90deg);
+}
+
+.display-segment.on {
+  background: var(--line-on-color);
+}
+.display-segment.on > .display-segment__edge-bottom {
+  border-top: 20px solid var(--line-on-color);
+}
+
+.display-segment.on > .display-segment__edge-top {
+  border-bottom: 20px solid var(--line-on-color);
+}
+
+.display-segment__edge-bottom {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  bottom: -20px;
+  border-left:20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid var(--line-off-color);
+}
+
+.display-segment__edge-top {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: -20px;
+  border-left:20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid var(--line-off-color);
+}
+
+.display-number {
+  background: black;
+  padding: 35px 25px 35px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 610px;
+}
+
+.display-number > div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.middle {
+  position: absolute;
+  left: 130px;
+}
+
+.bottom {
+  top: 390px;
+}
+
+.center {
+  position: absolute;
+  top: 130px;
+}
+
+.top {
+  top: -130px;
+}
+
+.middle.center {
+  left: 130px;
+}
+
+.left.center, .right.center {
+  top: 260px;
+}
+
+.display-counter {
+  display: flex;
+  flex-direction: row;
+}
