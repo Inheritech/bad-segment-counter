@@ -5,3 +5,5 @@ The code of this project is poorly made but it works at least.
 
 ## How to use
 Just run and to change the initial count, step, or time between steps just change the constructor of the Counter component
+
+Note: Before running you have to compile the main.jsx to main.js
